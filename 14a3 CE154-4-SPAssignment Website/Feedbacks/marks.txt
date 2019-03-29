@@ -1,0 +1,134 @@
+CE154 Assignment Marking Scheme 2014-15
+---------------------------------------
+
+Section 1: Layout and CSS
+
+[x] 05 1. The site has menus across the top and down the side.
+[x] 05 2. There are consistent menus across all pages of the site.
+[x] 05 3. The site has a reasonable appearance.
+[x] 05 4. CSS has been used for the layout.
+[ ] 05 5. The HTML of the pages validates as HTML5.
+[ ] 05 6. The CSS of the pages validates.
+
+Section 2: Structure and Merchandise
+
+[x] 05 1. The site has a home page, a user login page, a manager login page and
+          one page each for Books, Music, Games and DVDs.
+[x] 05 2. There are at least two items for sale in each category, i.e. Books,
+          Music, Games and DVDs, each with a price.
+[x] 05 3. Each item for sale has a picture (we are not too strict about the
+          picture).
+[x] 05 4. The user can restrict the number of items for sale which are
+          displayed on a page to a specified number (done with Javascript).
+
+Section 3: Log on and Purchase
+
+[x] 05 1. The user can log in to the site and log off again using their
+          customer_number and passwd from the customer table in the database.
+          Specifically, user 1001 can log in with password 'Alan' and this is
+          checked by searching the database.
+[x] 05 2. The user can 'purchase' an item which is for sale, but only when
+          logged in. No 'shopping cart' needed, just click on a button next
+          to the item and it is purchased immediately if the user is logged
+          in. Otherwise, it can say 'not logged in' or similar.
+[ ] 05 3. There is Javascript validation of login information. It should check
+          that username is a number and that the password submitted is not
+          null.
+[x] 05 4. The manager can log on to the site. Specifically, manager_number 100
+          can log in with passwd 'Adam', and this is checked in the database.
+[x] 05 5. The manager can view the contents of all the database tables but only
+          when logged in.
+[ ] 05 6. The manager can restrict information in the customer_order table on
+          the manager page to a range of dates (done with Javascript). The
+          range can be applied either to the order_date or to the
+          shipping_date.
+[x] 05 7. Stock goes down when an item is purchased. This will be verified by a
+          user making a purchase, followed by looking at the item__stock_count
+          column in the inventory table when logged on as manager.
+[x] 05 8. An item which is out of stock may not be purchased. For example,
+          Item "AA01-006", i.e. "Times Good University Guide 2014" is out of
+          stock.
+[x] 05 9. The database includes the filename for an item's image,
+          i.e. column item_image_loc in the inventory table includes a
+          filename. This will be checked from the manager page. Moreover, this
+          filename is extracted from the database dynamically along with the
+          other information about a product and used to create a display of
+          products for sale which matches the products listed in the database
+          at that time.
+[x] 05 10.For a new order, a delivery date two days in the future is recorded
+          in the database. This will be checked by ordering an item and then
+          from the manager page looking for one new entry in the customer_order
+          table and one new entry in the order_item table. (We assume a
+          customer orders one item only and there is one customer_order and one
+          order_item for that item.)
+Marks
+-----
+
+16 features, i.e. 80%
+
+Comments
+--------
+
+CSS and HTML don't validate.
+No javascript validation.
+Limiting to range is not done with javascript on Manager page.
+
+Explanation of the marking scheme
+---------------------------------
+
+Consider the line:
+
+[ ] 05 4. The manager can log on to the site.
+
+It means that if your website has the facility for a manager to log on and this
+works, it counts for 5% of the assignment mark.
+
+If you think that your website has this facility, you should add a Y like this:
+
+[X] 05 4. The manager can log on to the site.
+
+If you do not think it has this facility, leave the line as it is.
+
+We will check your website on the server to see if it includes this
+facility. If we cannot verify that it has, then you will not get the marks. If
+your judgements are radically different from ours, we will question you. So
+please fill in the marks as accurately as possible.
+
+Other important points
+----------------------
+
+NB: Your website *must* include a button on the homepage marked 'Reset DBase'
+which when pressed calls reset.jsp which re-sets the database on the server to
+a form which will work properly with your website. We will run this before we
+begin assessing your site. Remember, we have supplied such a script but you
+need to add to this any other data (e.g. product image filenames) or table rows
+which are necessary, and make sure the script can be run from your site when
+it is on the server.
+
+Your website *must* also have another button on the homepage marked 'Marks'
+which points to a file called marks.txt (this file you are reading) where you
+have placed an X on each line where you think your website has the feature
+requested. Note that if the assignment markers are unable to verify a point or
+they do not agree that you have satisfied the point, then they will not award
+you the marks for that point.
+
+After re-setting the database, all the original tables must be present and each
+table must include exactly the original rows of data. Note however that the
+column item_image_loc in existing rows of the inventory table may be changed to
+the appropriate filename of the image depicting the product. Note also that
+there may be some additional rows of data composed by you in each table at your
+discretion (e.g. to fill out the product pages a little and to show certain
+features).
+
+You *must* use JSP/JSTL for your website. You may not use PHP, ASP etc. You may
+not use jQuery or any other third party libraries except those explicitly
+provided in the labs and taught in the lectures. All code must be your own
+work, but you may use code from the examples given in the lectures and
+labs. You may not use Dreamweaver or any similar software for any part of the
+assignment.
+
+We may call you for interview before the end of term to answer detailed
+questions about your assignment. We will contact you if this is necessary.
+
+You must upload the .war of your assignment to the Faser system by the
+deadline.
